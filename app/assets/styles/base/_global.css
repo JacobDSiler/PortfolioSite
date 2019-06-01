@@ -16,3 +16,11 @@ img {
 a {
   color: black;
 }
+
+table {
+  border-spacing: 40px;
+}
+
+.credit {
+  font-size: .6rem;
+}

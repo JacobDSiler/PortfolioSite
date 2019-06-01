@@ -16,7 +16,7 @@ var config = {
         replaceSvgWithPng: function() {
           return function(sprite, render) {
             return render(sprite).split('.svg').join('.png');
-          }
+          };
         }
       },
       sprite: 'sprite.svg',
@@ -27,7 +27,7 @@ var config = {
       }
     }
   }
-}
+};
 
 gulp.task('beginClean', function() {
   return del(['./app/temp/sprite', './app/assets/images/sprites']);

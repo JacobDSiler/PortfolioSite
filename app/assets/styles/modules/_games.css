@@ -1,0 +1,50 @@
+.games {
+  text-align: center;
+  background-color: $mainBack;
+
+
+  hr {
+    background-color: clear;
+    height: 2px;
+    border-style: dotted none none;
+    border-color: grey;
+    border-width: .4vw;
+    width: 28%
+  }
+
+  &__title {
+    font-size: 3.6vw;
+  }
+
+  &__subtitle {
+
+    &::before {
+      content: "💖 ";
+      color:red;
+    }
+
+    &::after {
+      content: " 💖";
+      color:red;
+    }
+    font-size: 2.2vw;
+  }
+
+  &__projects {
+    margin-top: 5vw;
+    font-size: 1.5vw;
+    border-spacing: 40px;
+    color: white;
+    border: solid white 1px;
+    background-color: slategrey;
+
+    &::after {
+      content: "<--"
+      color:green;
+    }
+
+    a {
+      color: white;
+    }
+  }
+}

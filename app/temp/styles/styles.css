@@ -440,6 +440,14 @@ a {
   color: black;
 }
 
+table {
+  border-spacing: 40px;
+}
+
+.credit {
+  font-size: .6rem;
+}
+
 .headline {
     background-color: #e0c999;
     position: relative;
@@ -1312,6 +1320,10 @@ Instead edit gulp/templates/sprite */
   }
 }
 
+.social-icons__icon--clear {
+  background-color: #e0c999;
+}
+
 .social-icons__icon .icon {
   display: block;
   position: absolute;
@@ -1506,4 +1518,54 @@ Instead edit gulp/templates/sprite */
 
 .artical__close:hover {
   color: red;
+}
+
+.games {
+  text-align: center;
+  background-color: #afcbe3;
+}
+
+.games hr {
+  background-color: clear;
+  height: 2px;
+  border-style: dotted none none;
+  border-color: grey;
+  border-width: .4vw;
+  width: 28%
+}
+
+.games__title {
+  font-size: 3.6vw;
+}
+
+.games__subtitle {
+  font-size: 2.2vw;
+}
+
+.games__subtitle::before {
+  content: "💖 ";
+  color:red;
+}
+
+.games__subtitle::after {
+  content: " 💖";
+  color:red;
+}
+
+.games__projects {
+  margin-top: 5vw;
+  font-size: 1.5vw;
+  border-spacing: 40px;
+  color: white;
+  border: solid white 1px;
+  background-color: slategrey;
+}
+
+/*.games__projects::after {
+      content: "<--"
+      color:green;
+    }*/
+
+.games__projects a {
+  color: white;
 }

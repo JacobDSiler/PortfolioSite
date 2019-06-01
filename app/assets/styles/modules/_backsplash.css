@@ -10,4 +10,12 @@
   max-height: 15rem;
   max-width: 19rem;
   }
+
+  &__middle-text {
+    color: black;
+    position: absolute;
+    margin: 10% 18%;
+    z-index:1;
+    font-size:20;
+  }
 }

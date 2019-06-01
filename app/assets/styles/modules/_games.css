@@ -1,4 +1,5 @@
 .games {
+  position: relative;
   text-align: center;
   background-color: $mainBack;
 
@@ -9,8 +10,9 @@
     border-style: dotted none none;
     border-color: grey;
     border-width: .4vw;
-    width: 28%
+    width: 28%;
   }
+
 
   &__title {
     font-size: 3.6vw;
@@ -39,7 +41,7 @@
     background-color: slategrey;
 
     &::after {
-      content: "<--"
+      content: "<--";
       color:green;
     }
 

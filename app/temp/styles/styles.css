@@ -1349,6 +1349,14 @@ Instead edit gulp/templates/sprite */
   }
 }
 
+.backsplash__middle-text {
+  color: black;
+  position: absolute;
+  margin: 10% 18%;
+  z-index:1;
+  font-size:20;
+}
+
 .artical {
   position: fixed;
   z-index: 5;
@@ -1521,6 +1529,7 @@ Instead edit gulp/templates/sprite */
 }
 
 .games {
+  position: relative;
   text-align: center;
   background-color: #afcbe3;
 }
@@ -1531,7 +1540,7 @@ Instead edit gulp/templates/sprite */
   border-style: dotted none none;
   border-color: grey;
   border-width: .4vw;
-  width: 28%
+  width: 28%;
 }
 
 .games__title {
@@ -1561,10 +1570,10 @@ Instead edit gulp/templates/sprite */
   background-color: slategrey;
 }
 
-/*.games__projects::after {
-      content: "<--"
-      color:green;
-    }*/
+.games__projects::after {
+  content: "<--";
+  color:green;
+}
 
 .games__projects a {
   color: white;

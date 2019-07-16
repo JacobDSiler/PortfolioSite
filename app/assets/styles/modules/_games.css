@@ -40,11 +40,6 @@
     border: solid white 1px;
     background-color: slategrey;
 
-    &::after {
-      content: "<--";
-      color:green;
-    }
-
     a {
       color: white;
     }

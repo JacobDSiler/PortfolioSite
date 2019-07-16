@@ -29,7 +29,7 @@
 
   img {
   transition: all .500s ease-out;
-  margin-top: 1rem;
+  margin: 0;
   }
 
   &__story {

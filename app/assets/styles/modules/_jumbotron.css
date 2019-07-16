@@ -1,0 +1,8 @@
+.jombotron {
+
+  &__long {
+    padding: 5rem 0;
+    text-align: center;
+  }
+
+}

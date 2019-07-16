@@ -1389,7 +1389,7 @@ Instead edit gulp/templates/sprite */
 
 .artical img {
   transition: all .500s ease-out;
-  margin-top: 1rem;
+  margin: 0;
 }
 
 .artical__story {
@@ -1570,11 +1570,11 @@ Instead edit gulp/templates/sprite */
   background-color: slategrey;
 }
 
-.games__projects::after {
-  content: "<--";
-  color:green;
-}
-
 .games__projects a {
   color: white;
+}
+
+.jombotron__long {
+  padding: 5rem 0;
+  text-align: center;
 }

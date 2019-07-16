@@ -1,3 +1,4 @@
+//jshint esversion:6
 import $ from 'jquery';
 import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoints';
 
@@ -20,8 +21,8 @@ class HideTitle {
       new Waypoint({
         element: currentItem,
         handler: function() {
-          if (this.currentItem=$("headline__title")) {
-          $(currentItem).addClass("hide");
+          if (this.currentItem == $("headline__title")) {
+            $(currentItem).addClass("hide");
           }
         },
         offset: that.offsetPercentage

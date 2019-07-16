@@ -90,7 +90,8 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //jshint esversion:6
+
 
 	var _jquery = __webpack_require__(2);
 
@@ -9959,7 +9960,8 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //jshint esversion:6
+
 
 	var _jquery = __webpack_require__(2);
 
@@ -10783,7 +10785,8 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //jshint esversion:6
+
 
 	var _jquery = __webpack_require__(2);
 
@@ -11258,7 +11261,8 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //jshint esversion:6
+
 
 	var _jquery = __webpack_require__(2);
 
@@ -11319,13 +11323,13 @@
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //jshint esversion:6
 
 	var _jquery = __webpack_require__(2);
 
@@ -11339,30 +11343,33 @@
 	  function Artical() {
 	    _classCallCheck(this, Artical);
 
-	    //this.openArticalButton = $(".open-artical");
+	    this.nums = ['one', 'two', 'three', 'four']; //Storing number names in an array so I can access them with indices 0-3 for all following for loops.
+	    this.articals = []; //\\\\\\\\\\\\\\\\Artical DOM references array.
+	    this.articalClick = []; //\\\\\\\\\\\\\\\\Artical clicking references array.
+	    //setting the reference to artical;
 	    this.artical = (0, _jquery2.default)(".artical");
-	    //Setting the story references.
-	    this.articalFirst = (0, _jquery2.default)(".artical__story__one");
-	    this.articalSecond = (0, _jquery2.default)(".artical__story__two");
-	    this.articalThird = (0, _jquery2.default)(".artical__story__three");
-	    this.articalFourth = (0, _jquery2.default)(".artical__story__four");
-	    ///////More//////References/////////////////////
-	    this.articalFirstClick = (0, _jquery2.default)(".story--one");
-	    this.articalSecondClick = (0, _jquery2.default)(".story--two");
-	    this.articalThirdClick = (0, _jquery2.default)(".story--three");
-	    this.articalFourthClick = (0, _jquery2.default)(".story--four");
+
+	    for (var i = 0; i <= 3; i++) {
+	      //Setting 0-3 of the story references.
+	      this.articals.push((0, _jquery2.default)(".artical__story__" + this.nums[i]));
+	      ///////Click/////References/////////////////////
+	      this.articalClick.push((0, _jquery2.default)(".story--" + this.nums[i]));
+	    }
+
 	    ///////////////////////////////////////////////
 	    this.closeArticalButton = (0, _jquery2.default)(".artical__close");
 	    this.events();
 	  }
 
 	  _createClass(Artical, [{
-	    key: "events",
+	    key: 'events',
 	    value: function events() {
+	      var _this = this;
+
 	      //Setting 'then' to 'this'.
 	      var then = this;
 
-	      // clicking the x close artical button
+	      // Set the behavior when clicking the x close artical button
 	      this.closeArticalButton.click(this.closeArtical.bind(this));
 
 	      /*If the site address has a change, check if
@@ -11372,71 +11379,68 @@
 	      appear to close the artical.*/
 
 	      window.onhashchange = function (e) {
-	        if (location.hash === '#artical') {
-	          //console.log("You're visiting a cool feature!");
-	        } else {
-	          //console.log("An Artical was open, but we will close it now.");
+	        if (location.hash === '#artical') {} else {
 	          then.closeArtical();
 	        }
 	      };
 
-	      //Setting the artical click behaviors.
-	      this.articalFirstClick.click(this.setArticalOne.bind(this));
-	      this.articalSecondClick.click(this.setArticalTwo.bind(this));
-	      this.articalThirdClick.click(this.setArticalThree.bind(this));
-	      this.articalFourthClick.click(this.setArticalFour.bind(this));
+	      //Setting all of the artical click behaviors.
+
+	      var _loop = function _loop(i) {
+	        _this.articalClick[i].click(function () {
+	          then.setArtical(i);
+	        });
+	      };
+
+	      for (var i = 0; i <= 3; i++) {
+	        _loop(i);
+	      }
 
 	      // pushes any key
 	      (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
 	    }
 	  }, {
-	    key: "keyPressHandler",
+	    key: 'keyPressHandler',
 	    value: function keyPressHandler(e) {
 	      if (e.keyCode == 27) {
+	        //If the returned key is the esc key.
 	        this.closeArtical();
 	      }
 	    }
 	  }, {
-	    key: "setArticalOne",
-	    value: function setArticalOne() {
-	      this.articalFirst.addClass("artical__story__one--visible");
+	    key: 'numToName',
+	    value: function numToName(n) {
+	      return this.nums[n];
+	    }
+	  }, {
+	    key: 'setArtical',
+	    value: function setArtical(A) {
+	      var then = this;
+	      //Adding the '--visible' class the clicked artical.
+	      //Using the 'nums' array to find the written name of the index 'A'.
+	      this.articals[A].addClass("artical__story__" + then.nums[A] + "--visible");
 	      this.openArtical();
 	    }
 	  }, {
-	    key: "setArticalTwo",
-	    value: function setArticalTwo() {
-	      this.articalSecond.addClass("artical__story__two--visible");
-	      this.openArtical();
-	    }
-	  }, {
-	    key: "setArticalThree",
-	    value: function setArticalThree() {
-	      this.articalThird.addClass("artical__story__three--visible");
-	      this.openArtical();
-	    }
-	  }, {
-	    key: "setArticalFour",
-	    value: function setArticalFour() {
-	      this.articalFourth.addClass("artical__story__four--visible");
-	      this.openArtical();
-	    }
-	  }, {
-	    key: "openArtical",
+	    key: 'openArtical',
 	    value: function openArtical() {
 	      this.artical.addClass("artical--open");
 	      return false;
 	    }
 	  }, {
-	    key: "clearArticals",
+	    key: 'clearArticals',
 	    value: function clearArticals() {
-	      this.articalFirst.removeClass("artical__story__one--visible");
-	      this.articalSecond.removeClass("artical__story__two--visible");
-	      this.articalThird.removeClass("artical__story__three--visible");
-	      this.articalFourth.removeClass("artical__story__four--visible");
+	      var then = this;
+	      //Removing the '--visible' class from all of the articals to hide them.
+	      for (var i = 0; i < this.articals.length; i++) {
+	        //Using the 'nums' array to find the written name of the index 'i'.
+	        then.articals[i].removeClass("artical__story__" + then.nums[i] + "--visible");
+	      }
 	    }
 	  }, {
-	    key: "closeArtical",
+	    key: 'closeArtical',
 	    value: function closeArtical() {
+	      //Here the atical--open class is removed from the artical DOM element and then clearArticals removes the '--visible' modifier class from all the articals.
 	      this.artical.removeClass("artical--open");
 	      this.clearArticals();
 	    }

@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacob Siler — Developer, Author, Maker</title>
+  <meta name="description" content="Jacob Siler — independent developer, fiction author, and maker based in Mullingar, Ireland. Blender addons, UE5 plugins, web apps, and the Sky Bridge Saga." />
+  <meta property="og:title" content="Jacob Siler" />
+  <meta property="og:description" content="Independent developer, fiction author, and maker based in Mullingar, Ireland." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jacobsiler.com" />
+  <link rel="canonical" href="https://jacobsiler.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Variables ── */
+    :root {
+      --ink:        #1a1814;
+      --ink-mid:    #4a4540;
+      --ink-light:  #9a9590;
+      --ink-faint:  #d8d4ce;
+      --paper:      #faf8f4;
+      --paper-off:  #f3f0ea;
+      --paper-warm: #ede9e0;
+      --paper-dark: #e5e0d5;
+      --accent:     #c17f4a;
+      --accent-light: #e8c49a;
+      --accent-dark:  #8f5a2a;
+      --border:      1.5px solid var(--ink);
+      --border-thin: 0.5px solid var(--ink-faint);
+      --border-warm: 1px solid var(--ink-faint);
+      --font-display: 'Syne', sans-serif;
+      --font-serif:   'DM Serif Display', Georgia, serif;
+      --font-mono:    'DM Mono', monospace;
+      --shadow:       0 4px 24px rgba(26,24,20,0.08);
+      --shadow-lg:    0 12px 48px rgba(26,24,20,0.12);
+      --transition:   0.2s ease;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-display);
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Navigation ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: var(--border);
+      padding: 0 2.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      color: var(--ink-light);
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      padding: 7px 18px;
+      border: var(--border);
+      background: var(--ink);
+      color: var(--paper);
+      transition: background var(--transition);
+    }
+
+    .nav-cta:hover { background: var(--ink-mid); }
+
+    /* ── Hero ── */
+    .hero {
+      border-bottom: var(--border);
+      padding: 5rem 2.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: end;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1.5px;
+      background: var(--accent);
+      display: block;
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 2rem;
+    }
+
+    .hero-desc {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 11px 22px;
+      border: var(--border);
+      transition: all var(--transition);
+      cursor: pointer;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn:hover { background: var(--ink); color: var(--paper); }
+
+    .btn--filled { background: var(--ink); color: var(--paper); }
+    .btn--filled:hover { background: var(--ink-mid); }
+
+    .btn--accent {
+      background: var(--accent);
+      color: var(--paper);
+      border-color: var(--accent);
+    }
+
+    .btn--accent:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+
+    /* ── Hero Right ── */
+    .hero-right {
+      border-left: var(--border);
+      padding-left: 3rem;
+    }
+
+    .hero-stat-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .hero-stat {
+      padding: 1.25rem 0;
+      border-bottom: var(--border-thin);
+    }
+
+    .hero-stat:last-child { border-bottom: none; }
+
+    .hero-stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    /* ── Section wrapper ── */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .section-header {
+      border-bottom: var(--border);
+      border-top: var(--border);
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    .section-link {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      color: var(--ink-light);
+      transition: color var(--transition);
+    }
+
+    .section-link:hover { color: var(--ink); }
+
+    /* ── About ── */
+    .about-section {
+      border-bottom: var(--border);
+    }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-left {
+      padding: 4rem 2.5rem 4rem 2.5rem;
+      border-right: var(--border);
+    }
+
+    .about-right {
+      padding: 4rem 2.5rem;
+      background: var(--paper-off);
+    }
+
+    .about-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-heading em { font-style: italic; color: var(--accent); }
+
+    .about-body {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+    }
+
+    .about-body p { margin-bottom: 1rem; }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .fact-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: var(--border-thin);
+    }
+
+    .fact-row:last-child { border-bottom: none; }
+
+    .fact-icon {
+      font-size: 1.1rem;
+      width: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .fact-content {}
+
+    .fact-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 2px;
+    }
+
+    .fact-value {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Disciplines ── */
+    .disciplines-section {
+      border-bottom: var(--border);
+    }
+
+    .disciplines-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .discipline {
+      border-right: var(--border);
+      padding: 2.5rem 2rem;
+      transition: background var(--transition);
+    }
+
+    .discipline:last-child { border-right: none; }
+    .discipline:hover { background: var(--paper-off); }
+
+    .discipline-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--ink-faint);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .discipline-title {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .discipline-desc {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    /* ── Projects ── */
+    .projects-section {
+      border-bottom: var(--border);
+    }
+
+    .project-strip {
+      border-bottom: var(--border-thin);
+      display: grid;
+      grid-template-columns: 60px 80px 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 2.5rem;
+      transition: background var(--transition);
+      cursor: pointer;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-strip:hover { background: var(--paper-off); }
+    .project-strip:last-child { border-bottom: none; }
+
+    .project-strip-num {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--ink-faint);
+      line-height: 1;
+    }
+
+    .project-strip-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: var(--border-thin);
+      color: var(--ink-mid);
+      white-space: nowrap;
+    }
+
+    .project-strip-title {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 3px;
+    }
+
+    .project-strip-desc {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 500px;
+    }
+
+    .project-strip-arrow {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--ink-light);
+      transition: all var(--transition);
+    }
+
+    .project-strip:hover .project-strip-arrow {
+      color: var(--ink);
+      transform: translate(3px, -3px);
+    }
+
+    /* ── Writing ── */
+    .writing-section {
+      border-bottom: var(--border);
+    }
+
+    .writing-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .writing-left {
+      padding: 4rem 2.5rem;
+      border-right: var(--border);
+    }
+
+    .writing-right {
+      padding: 4rem 2.5rem;
+    }
+
+    .book-card {
+      border: var(--border);
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      transition: background var(--transition);
+    }
+
+    .book-card:hover { background: var(--paper-off); }
+
+    .book-cover {
+      width: 100px;
+      height: 140px;
+      object-fit: cover;
+      border: var(--border-thin);
+    }
+
+    .book-cover-placeholder {
+      width: 100px;
+      height: 140px;
+      background: var(--paper-warm);
+      border: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--ink-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .book-info {}
+
+    .book-series {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .book-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .book-desc {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .book-status {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: var(--border-thin);
+      color: var(--ink-mid);
+    }
+
+    .writing-collab {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--paper-off);
+      border: var(--border-thin);
+    }
+
+    .writing-collab-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .writing-collab-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .writing-collab-desc {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    /* ── Sites / Links ── */
+    .sites-section {
+      border-bottom: var(--border);
+    }
+
+    .sites-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .site-card {
+      border-right: var(--border);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: background var(--transition);
+      cursor: pointer;
+    }
+
+    .site-card:last-child { border-right: none; }
+    .site-card:hover { background: var(--paper-off); }
+
+    .site-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .site-card-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .site-card-url {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ink-light);
+    }
+
+    .site-card-desc {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .site-card-arrow {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--ink-light);
+      align-self: flex-end;
+      transition: all var(--transition);
+    }
+
+    .site-card:hover .site-card-arrow { color: var(--ink); transform: translate(3px, -3px); }
+
+    /* ── Contact ── */
+    .contact-section {
+      border-bottom: var(--border);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .contact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .contact-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .contact-heading em { font-style: italic; color: var(--accent-light); }
+
+    .contact-desc {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: rgba(250,248,244,0.6);
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: all var(--transition);
+    }
+
+    .contact-link:last-child { border-bottom: none; }
+    .contact-link:hover { padding-left: 8px; }
+
+    .contact-link-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(250,248,244,0.4);
+      margin-bottom: 3px;
+    }
+
+    .contact-link-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-link-arrow {
+      font-size: 1rem;
+      color: rgba(250,248,244,0.3);
+      transition: all var(--transition);
+    }
+
+    .contact-link:hover .contact-link-arrow {
+      color: var(--accent-light);
+      transform: translate(3px, -3px);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: var(--border);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-light);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-light);
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-right { border-left: none; border-top: var(--border); padding-left: 0; padding-top: 2rem; }
+      .hero-stat-group { flex-direction: row; flex-wrap: wrap; gap: 0; }
+      .hero-stat { flex: 1; min-width: 120px; border-right: var(--border-thin); border-bottom: none; padding: 0.75rem 1rem; }
+      .hero-stat:last-child { border-right: none; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-left { border-right: none; border-bottom: var(--border); }
+      .disciplines-grid { grid-template-columns: 1fr 1fr; }
+      .discipline:nth-child(2) { border-right: none; }
+      .discipline:nth-child(3) { border-top: var(--border); }
+      .discipline:nth-child(4) { border-top: var(--border); border-right: none; }
+      .writing-inner { grid-template-columns: 1fr; }
+      .writing-left { border-right: none; border-bottom: var(--border); }
+      .sites-grid { grid-template-columns: 1fr; }
+      .site-card { border-right: none; border-bottom: var(--border); }
+      .site-card:last-child { border-bottom: none; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .project-strip { grid-template-columns: 50px 1fr auto; }
+      .project-strip-tag { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .section-wrap { padding: 0 1.25rem; }
+      .about-left, .about-right, .writing-left, .writing-right { padding: 2.5rem 1.25rem; }
+      .disciplines-grid { grid-template-columns: 1fr; }
+      .discipline { border-right: none; border-top: var(--border); }
+      .discipline:first-child { border-top: none; }
+      .contact-inner { padding: 3rem 1.25rem; }
+      .footer { padding: 1.25rem; flex-direction: column; gap: 0.75rem; text-align: center; }
+      .project-strip { padding: 1.25rem; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <span class="nav-name">Jacob Siler</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#sites">Sites</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section>
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">Mullingar, Ireland</div>
+      <h1 class="hero-name">Jacob<br><em>Siler.</em></h1>
+      <div class="hero-title">Developer · Author · Maker · Father</div>
+      <p class="hero-desc">I build things in cycles — Blender addons, Unreal Engine plugins, web apps, and hardware prototypes — then write fantasy novels in the gaps. Based in County Westmeath, Ireland with my wife Gené and our five daughters.</p>
+      <div class="hero-btns">
+        <a href="#work" class="btn btn--filled">See My Work</a>
+        <a href="https://silertech.jacobsiler.com" target="_blank" class="btn">Siler Technology ↗</a>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-group">
+        <div class="hero-stat">
+          <div class="hero-stat-num">10+</div>
+          <div class="hero-stat-label">Projects shipped</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-label">Daughters</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-label">Disciplines</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">∞</div>
+          <div class="hero-stat-label">Ideas in the queue</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ── -->
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <div class="about-left">
+      <div class="about-eyebrow">About</div>
+      <h2 class="about-heading">Builder by nature.<br><em>Storyteller</em> by calling.</h2>
+      <div class="about-body">
+        <p>I'm an independent developer, fiction author, and homeschooling father of five daughters, based in Mullingar, County Westmeath, Ireland. I operate under Siler Technology — a one-person studio that ships tools and projects across multiple disciplines.</p>
+        <p>My work spans Blender addons, Unreal Engine 5 plugins, single-file web apps, hardware prototypes, and the Sky Bridge Saga — a multi-book steampunk fantasy series co-authored with my sister Allyson Siler.</p>
+        <p>I build in cycles. Each project gets full attention until it's done, then I move to the next problem worth solving. Everything is made to be useful, playable, or both.</p>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-facts">
+        <div class="fact-row">
+          <div class="fact-icon">📍</div>
+          <div class="fact-content">
+            <div class="fact-label">Location</div>
+            <div class="fact-value">Mullingar, County Westmeath, Ireland</div>
+          </div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-icon">👨‍👩‍👧‍👧</div>
+          <div class="fact-content">
+            <div class="fact-label">Family</div>
+            <div class="fact-value">Married to Gené · Five daughters</div>
+          </div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-icon">🏫</div>
+          <div class="fact-content">
+            <div class="fact-label">Education Style</div>
+            <div class="fact-value">Homeschooling father</div>
+          </div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-icon">⚙️</div>
+          <div class="fact-content">
+            <div class="fact-label">Primary Tools</div>
+            <div class="fact-value">Blender · Unreal Engine 5 · Firebase · Cloudflare</div>
+          </div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-icon">✍️</div>
+          <div class="fact-content">
+            <div class="fact-label">Author Pen Name</div>
+            <div class="fact-value">J.D. Siler</div>
+          </div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-icon">🏗️</div>
+          <div class="fact-content">
+            <div class="fact-label">Current Focus</div>
+            <div class="fact-value">NarrativeBridge · Sky Bridge Saga Book 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Disciplines ── -->
+<section class="disciplines-section">
+  <div class="disciplines-grid">
+    <div class="discipline">
+      <div class="discipline-num">01</div>
+      <div class="discipline-title">Software Development</div>
+      <div class="discipline-desc">Blender addons in Python, UE5 plugins in C++, single-file web apps with Firebase backends, and Cloudflare Workers for edge APIs.</div>
+    </div>
+    <div class="discipline">
+      <div class="discipline-num">02</div>
+      <div class="discipline-title">Fiction Writing</div>
+      <div class="discipline-desc">Steampunk fantasy novels under the pen name J.D. Siler. Co-authoring the Sky Bridge Saga with Allyson Siler across multiple books.</div>
+    </div>
+    <div class="discipline">
+      <div class="discipline-num">03</div>
+      <div class="discipline-title">Hardware Prototyping</div>
+      <div class="discipline-desc">Arduino-based consumer product prototypes. Currently building Dryft — a hands-free body drying system with proximity sensors and motorised airflow.</div>
+    </div>
+    <div class="discipline">
+      <div class="discipline-num">04</div>
+      <div class="discipline-title">Homeschool Education</div>
+      <div class="discipline-desc">Designing and delivering a full homeschool curriculum for five daughters in County Westmeath, Ireland — alongside everything else.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Work ── -->
+<section id="work" class="projects-section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Selected Work</span>
+      <a href="https://silertech.jacobsiler.com" target="_blank" class="section-link">Full portfolio at silertech.jacobsiler.com →</a>
+    </div>
+  </div>
+
+  <a href="https://silertech.jacobsiler.com/#project/narrative-bridge" target="_blank" class="project-strip">
+    <div class="project-strip-num">01</div>
+    <span class="project-strip-tag">UE5 Plugin</span>
+    <div>
+      <div class="project-strip-title">NarrativeBridge</div>
+      <div class="project-strip-desc">Professional dialogue & quest authoring plugin for Unreal Engine 5 — graph editor, AI generation, multi-provider TTS</div>
+    </div>
+    <div class="project-strip-arrow">↗</div>
+  </a>
+
+  <a href="https://curveslice.jacobsiler.com" target="_blank" class="project-strip">
+    <div class="project-strip-num">02</div>
+    <span class="project-strip-tag">Blender Addon</span>
+    <div>
+      <div class="project-strip-title">CurveSlice Pro</div>
+      <div class="project-strip-desc">ZBrush-style curve-based mesh cutting for Blender — free, standard, and pro tiers</div>
+    </div>
+    <div class="project-strip-arrow">↗</div>
+  </a>
+
+  <a href="https://beam.jacobsiler.com" target="_blank" class="project-strip">
+    <div class="project-strip-num">03</div>
+    <span class="project-strip-tag">Web App</span>
+    <div>
+      <div class="project-strip-title">Beam</div>
+      <div class="project-strip-desc">Peer-to-peer file transfer, messaging, and video calls — no account required, runs entirely in the browser</div>
+    </div>
+    <div class="project-strip-arrow">↗</div>
+  </a>
+
+  <a href="https://silertech.jacobsiler.com/#project/digger" target="_blank" class="project-strip">
+    <div class="project-strip-num">04</div>
+    <span class="project-strip-tag">UE5 Plugin</span>
+    <div>
+      <div class="project-strip-title">Digger</div>
+      <div class="project-strip-desc">Real-time voxel terrain excavation for UE5 — sparse voxel grid, Marching Cubes, native Landscape integration</div>
+    </div>
+    <div class="project-strip-arrow">↗</div>
+  </a>
+
+  <a href="https://folio.jacobsiler.com" target="_blank" class="project-strip">
+    <div class="project-strip-num">05</div>
+    <span class="project-strip-tag">Web App</span>
+    <div>
+      <div class="project-strip-title">Folio</div>
+      <div class="project-strip-desc">Browser-based manuscript formatter and cloud sync tool for fiction authors</div>
+    </div>
+    <div class="project-strip-arrow">↗</div>
+  </a>
+
+  <a href="https://silertech.jacobsiler.com" target="_blank" class="project-strip" style="border-bottom:none;">
+    <div class="project-strip-num">+5</div>
+    <span class="project-strip-tag">More</span>
+    <div>
+      <div class="project-strip-title">And more at Siler Technology</div>
+      <div class="project-strip-desc">Gravitas, WrapKit, Forge Planner, Blender Dev Tools, Dryft...</div>
+    </div>
+    <div class="project-strip-arrow">↗</div>
+  </a>
+</section>
+
+<!-- ── Writing ── -->
+<section id="writing" class="writing-section">
+  <div class="writing-inner">
+    <div class="writing-left">
+      <div class="about-eyebrow">Writing</div>
+      <h2 class="about-heading">The <em>Sky Bridge</em><br>Saga</h2>
+      <p class="about-body" style="margin-bottom:0;">A steampunk fantasy series set on Stella — a world modeled on the Pleiades star cluster. Seven regions on the continent of Pleione, an ancient Blackthorn family legacy, and a story that spans multiple books and two authors.</p>
+
+      <div class="book-card">
+        <div class="book-cover-placeholder">Sky Bridge Book One</div>
+        <div class="book-info">
+          <div class="book-series">Sky Bridge Saga · Book One</div>
+          <div class="book-title">Sky Bridge</div>
+          <div class="book-desc">The opening of the Blackthorn generational story. Set in the Elekra region of Pleione. Written by Jacob Siler as J.D. Siler.</div>
+          <span class="book-status">Written · In editing</span>
+        </div>
+      </div>
+
+      <div class="book-card" style="margin-top:1rem;">
+        <div class="book-cover-placeholder">Sky Bridge Book Two</div>
+        <div class="book-info">
+          <div class="book-series">Sky Bridge Saga · Book Two</div>
+          <div class="book-title">The Dissolution</div>
+          <div class="book-desc">Continuing the generational story. Recovering lost subplots and characters from the archive — Morna's villain arc, Sydney Howland's Oracle ability, the Morning Star.</div>
+          <span class="book-status">In development</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="writing-right">
+      <div class="about-eyebrow">Co-authorship</div>
+      <h2 class="about-heading" style="font-size:clamp(1.6rem,3vw,2.2rem);">Written with<br><em>Allyson Siler.</em></h2>
+      <p class="about-body" style="margin-bottom:1.5rem;">The Sky Bridge Saga is a collaborative project. Jacob writes Book One and anchors the series structure; co-author Allyson Siler contributed Book Five, <em>Fallen Stars</em>, as a NaNoWriMo draft.</p>
+
+      <div class="writing-collab">
+        <div class="writing-collab-label">Book Five</div>
+        <div class="writing-collab-title">Fallen Stars — Allyson Siler</div>
+        <div class="writing-collab-desc">A NaNoWriMo draft set in the same world, advancing the generational story established in Book One. Co-author discussion and world-bible alignment in progress.</div>
+      </div>
+
+      <div class="writing-collab" style="margin-top:1rem;">
+        <div class="writing-collab-label">For Readers</div>
+        <div class="writing-collab-title">Full series details at skybridgesaga.com</div>
+        <div class="writing-collab-desc">Lore, character guides, world maps, release updates, and playable game content tied to the Sky Bridge world.</div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <a href="https://skybridgesaga.com" target="_blank" class="btn btn--accent">Visit skybridgesaga.com ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Sites ── -->
+<section id="sites" class="sites-section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">My Sites</span>
+    </div>
+  </div>
+  <div class="sites-grid">
+    <a href="https://silertech.jacobsiler.com" target="_blank" class="site-card">
+      <div class="site-card-label">Dev Studio</div>
+      <div class="site-card-name">Siler Technology</div>
+      <div class="site-card-url">silertech.jacobsiler.com</div>
+      <div class="site-card-desc">The full portfolio of Blender addons, UE5 plugins, web apps, and hardware projects. Detailed write-ups on every project I've shipped.</div>
+      <div class="site-card-arrow">↗</div>
+    </a>
+    <a href="https://skybridgesaga.com" target="_blank" class="site-card">
+      <div class="site-card-label">Fiction</div>
+      <div class="site-card-name">Sky Bridge Saga</div>
+      <div class="site-card-url">skybridgesaga.com</div>
+      <div class="site-card-desc">The official home of the Sky Bridge Saga — lore, characters, world details, release news, and HTML5 games set in the world of Stella.</div>
+      <div class="site-card-arrow">↗</div>
+    </a>
+    <a href="https://beam.jacobsiler.com" target="_blank" class="site-card">
+      <div class="site-card-label">Web App</div>
+      <div class="site-card-name">Beam</div>
+      <div class="site-card-url">beam.jacobsiler.com</div>
+      <div class="site-card-desc">Fast, private, peer-to-peer file transfer and communication. No account required — open it and share your link.</div>
+      <div class="site-card-arrow">↗</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-heading">Let's work<br><em>together.</em></h2>
+      <p class="contact-desc">Whether you're interested in a plugin, an addon, a collaboration, or just want to talk about steampunk fantasy world-building — I'm easy to reach.</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://silertech.jacobsiler.com" target="_blank" class="contact-link">
+        <div>
+          <div class="contact-link-label">Dev Portfolio</div>
+          <div class="contact-link-value">silertech.jacobsiler.com</div>
+        </div>
+        <div class="contact-link-arrow">↗</div>
+      </a>
+      <a href="https://skybridgesaga.com" target="_blank" class="contact-link">
+        <div>
+          <div class="contact-link-label">Fiction & Games</div>
+          <div class="contact-link-value">skybridgesaga.com</div>
+        </div>
+        <div class="contact-link-arrow">↗</div>
+      </a>
+      <a href="https://github.com/jacobdsiler" target="_blank" class="contact-link">
+        <div>
+          <div class="contact-link-label">Code</div>
+          <div class="contact-link-value">github.com/jacobdsiler</div>
+        </div>
+        <div class="contact-link-arrow">↗</div>
+      </a>
+      <a href="https://www.linkedin.com/in/jacob-siler-46341b69" target="_blank" class="contact-link">
+        <div>
+          <div class="contact-link-label">Professional</div>
+          <div class="contact-link-value">LinkedIn — Jacob Siler</div>
+        </div>
+        <div class="contact-link-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── */
+<footer>
+  <div class="footer">
+    <span class="footer-copy">© 2025 Jacob D. Siler · Mullingar, Ireland</span>
+    <div class="footer-links">
+      <a href="https://silertech.jacobsiler.com" target="_blank">Siler Technology</a>
+      <a href="https://skybridgesaga.com" target="_blank">Sky Bridge Saga</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
